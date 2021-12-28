@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "==> Swapfile"
+ohai "Swapfile"
 
 if [ ! -f /swapfile ]; then
   echo "Creating 4G /swapfile ..."
@@ -8,5 +8,5 @@ if [ ! -f /swapfile ]; then
   chmod 600 /swapfile
   mkswap /swapfile
   swapon /swapfile
-  echo "/swapfile none swap defaults 0 0" >> /etc/fstab
+  echo "/swapfile none swap defaults 0 0" >>/etc/fstab
 fi
