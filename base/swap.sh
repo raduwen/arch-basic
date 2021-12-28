@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "==> Swapfile"
+
+if [ ! -f /swapfile ]; then
+  echo "Creating 4G /swapfile ..."
+  dd if=dev/zero of=/swapfile bs=1M count=4096 status=progress
+  chmod 600 /swapfile
+  mkswap /swapfile
+  swapon /swapfile
+  echo "/swapfile none swap defaults 0 0" >> /etc/fstab
+fi
