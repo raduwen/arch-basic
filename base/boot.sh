@@ -14,5 +14,5 @@ if [ ! -f /boot/loader/entries/arch.conf ]; then
   echo "linux /vmlinuz-linux" >>/boot/loader/entries/arch.conf
   echo "initrd /intel-ucode.img" >>/boot/loader/entries/arch.conf
   echo "initrd /initramfs-linux.img" >>/boot/loader/entries/arch.conf
-  echo "options root=$(blkid -o export /dev/sda1)" rw >>/boot/loader/entires/arch.conf
+  echo "options root=$(blkid -o export /dev/sda1)" rw >>/boot/loader/entries/arch.conf
 fi
