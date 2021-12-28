@@ -8,5 +8,8 @@ if [ ! -f /swapfile ]; then
   chmod 600 /swapfile
   mkswap /swapfile
   swapon /swapfile
+fi
+
+if ! grep swapfile /etc/fstab; then
   echo "/swapfile none swap defaults 0 0" >>/etc/fstab
 fi
