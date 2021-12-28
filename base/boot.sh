@@ -16,3 +16,5 @@ if [ ! -f /boot/loader/entries/arch.conf ]; then
   echo "initrd /initramfs-linux.img" >>/boot/loader/entries/arch.conf
   echo "options root=$(blkid -o export /dev/sda1 | grep ^UUID=)" rw >>/boot/loader/entries/arch.conf
 fi
+
+mkinitcpio -p linux
